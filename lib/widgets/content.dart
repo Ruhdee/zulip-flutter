@@ -1210,7 +1210,7 @@ class Mention extends StatelessWidget {
         if (user case User(:final fullName)) {
           nodes = [TextNode(node.isSilent ? fullName : '@$fullName')];
         }
-      case UserMentionNode(userId: null):
+      case WildcardMentionNode():
     }
 
     return Container(
