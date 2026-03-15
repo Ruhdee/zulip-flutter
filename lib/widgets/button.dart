@@ -54,6 +54,18 @@ class ZulipWebUiKitButton extends StatelessWidget {
           WidgetState.pressed: designVariables.btnBgAttHighIntWarningActive,
           ~WidgetState.pressed: designVariables.btnBgAttHighIntWarningNormal,
         });
+      case (ZulipWebUiKitButtonAttention.minimal, ZulipWebUiKitButtonIntent.danger):
+        throw UnimplementedError();
+      case (ZulipWebUiKitButtonAttention.medium, ZulipWebUiKitButtonIntent.danger):
+        return WidgetStateColor.fromMap({
+          WidgetState.pressed: designVariables.btnBgAttMediumIntDangerActive,
+          ~WidgetState.pressed: designVariables.btnBgAttMediumIntDangerNormal,
+        });
+      case (ZulipWebUiKitButtonAttention.high, ZulipWebUiKitButtonIntent.danger):
+        return WidgetStateColor.fromMap({
+          WidgetState.pressed: designVariables.btnBgAttHighIntDangerActive,
+          ~WidgetState.pressed: designVariables.btnBgAttHighIntDangerNormal,
+        });
       case (ZulipWebUiKitButtonAttention.minimal, ZulipWebUiKitButtonIntent.info):
         throw UnimplementedError();
       case (ZulipWebUiKitButtonAttention.medium, ZulipWebUiKitButtonIntent.info):
@@ -82,6 +94,12 @@ class ZulipWebUiKitButton extends StatelessWidget {
         return designVariables.btnLabelAttMediumIntWarning;
       case (ZulipWebUiKitButtonAttention.high, ZulipWebUiKitButtonIntent.warning):
         return designVariables.btnLabelAttHighIntWarning;
+      case (ZulipWebUiKitButtonAttention.minimal, ZulipWebUiKitButtonIntent.danger):
+        throw UnimplementedError();
+      case (ZulipWebUiKitButtonAttention.medium, ZulipWebUiKitButtonIntent.danger):
+        return designVariables.btnLabelAttMediumIntDanger;
+      case (ZulipWebUiKitButtonAttention.high, ZulipWebUiKitButtonIntent.danger):
+        return designVariables.btnLabelAttHigh;
       case (ZulipWebUiKitButtonAttention.minimal, ZulipWebUiKitButtonIntent.info):
         throw UnimplementedError();
       case (ZulipWebUiKitButtonAttention.medium, ZulipWebUiKitButtonIntent.info):
@@ -215,7 +233,7 @@ enum ZulipWebUiKitButtonAttention {
 enum ZulipWebUiKitButtonIntent {
   neutral,
   warning,
-  // danger,
+  danger,
   info,
   // success,
   // brand,
